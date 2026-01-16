@@ -1,7 +1,7 @@
 ---
 title: "RAG Agriculture Knowledge Assistant"
 publishedAt: 2026-01-02
-description: "A smart document retrieval system that converts farm reports and research papers into an interactive form for building an intelligence base. The retrieval-augmented generation system is used to ask the system any question the users wish to know with the answer being referenced and accurate."
+description: "A smart document retrieval system that converts agricultural documents into an interactive form for building an intelligence base. The retrieval-augmented generation system is used to ask the system any question the users wish to know with the answer being referenced and accurate."
 slug: "rag-agriculture-assistant"
 image: 
   src: "/post_img/eigen-field/rag-chat-interface.webp"
@@ -9,7 +9,7 @@ image:
 img_logo: 
   src: "/post_img/eigen-field/eigen-field.webp"
   alt: "RAG Agriculture Assistant"
-github: "git@github.com:Abdellatif404/EIGEN_FIELD.git"
+github: "https://github.com/Abdellatif404/Eigen-Field"
 website: "#"
 technologies:
   - name: "FastAPI"
@@ -24,7 +24,7 @@ technologies:
 
 ## RAG Agriculture Knowledge Assistant
 
-A smart document retrieval system that converts farm reports and research papers into an interactive form for building an intelligence base. The retrieval-augmented generation system is used to ask the system any question the users wish to know with the answer being referenced and accurate.
+A smart document retrieval system that converts agricultural documents into an interactive form for building an intelligence base. The retrieval-augmented generation system is used to ask the system any question the users wish to know with the answer being referenced and accurate.
 
 ## Overview
 
@@ -35,44 +35,54 @@ A smart document retrieval system that converts farm reports and research papers
 
 ### Key Features
 
-- **Document Upload/Indexing**: Automatically indexes the PDF files, breaks the documents into chunks of text, and generates vector representations for semantic searching.
-- **Natural Language Queries**
-        Ask questions in natural, everyday language and receive answers that take context into consideration
-- **Source Attribution** : Each answer contains references to the source documents, making them traceable and verifiable.
-- **Vector Similarity Search**: Based on ChromaDB for efficient semantic document searches by meaning, not keyword
-- **Integration of LLM**: Using Ollama for local inference, preserving privacy and avoiding API charges
-- **Document Management**: See, list, and delete indexed documents via clean API
+- **Document Upload/Indexing**: Automatically indexes PDF files, cleans text using PyMuPDF, and generates vector representations for semantic searching.
+- **Natural Language Queries**: Ask questions in natural, everyday language and receive answers that take context into consideration.
+- **Source Attribution**: Each answer contains references to the source documents, making them traceable and verifiable.
+- **Vector Similarity Search**: Based on ChromaDB for efficient semantic document searches by meaning, not keyword.
+- **Integration of LLM**: Using Ollama for local inference with **Qwen2:1.5B**, preserving privacy and avoiding API charges.
+- **Document Management**: See, list, and delete indexed documents via a clean API.
 
 ### Technical Architecture
 
-**Core Components:
-- **PDF Ingestion Pipeline**: PDF extraction → Text chunking (500 chars with 50 char overlap) → Embedding generation → ChromaDB storage
-- **Retrieval Engine**: Query embedding → Vector similarity search → Top-K relevant chunks retrieval
-- **Generation Layer** : Context construction → LLM prompting → Response generation citing sources 
-- **API Layer**: RESTful FastAPI endpoints for document management and answering questions
-
-**Technology Stack:**
-- **Backend**: FastAPI with async support
-- **Vector Database**: ChromaDB for persistent embedding storage
-- **Embeddings**: Sentence Transformers (all-MiniLM-L6-v2) - 384-dimensional vectors
-- **LLM**: Ollama (local inference) with **Gemma2:2B**.
-- **Document Processing**: PyPDF for text extraction, LangChain for chunking
-- **Containerization**: Docker + Docker Compose for reproducible deployment
+- **Backend**: FastAPI with async support.
+- **Vector Database**: ChromaDB for persistent embedding storage.
+- **Embeddings**: Default ChromaDB embedding function.
+- **LLM**: Ollama (local inference) with **Qwen2:1.5B**.
+- **Document Processing**: **PyMuPDF (fitz)** for text extraction, LangChain for recursive chunking.
+- **Containerization**: Docker + Docker Compose managed via **Makefile**.
 
 ### System Performance
 
-- Processes 50-page PDFs in ~30 seconds (extraction + indexing)
-- Retrieves relevant chunks in <100ms via vector search
-- Generates context-aware answers in 2-5 seconds
-- Handles document collections of 1000+ pages efficiently
-- Zero-shot learning: No training required, works with any document domain
+- **Fast Indexing**: Processes complex PDFs quickly using high-performance C-based extraction (fitz).
+- **Sub-second Retrieval**: Retrieves relevant context chunks in <100ms via vector search.
+- **Streaming Responses**: Real-time token generation for a smooth user experience.
+- **Scalable Storage**: Persistent vector database ensures knowledge remains available across restarts.
+
+### Installation & Setup
+
+The project is fully containerized. Use the provided **Makefile** to manage the application:
+
+```bash
+# Build and start the entire stack (Ollama, Backend, Frontend)
+make
+
+# Stop all services
+make down
+
+# View live logs
+make logs
+```
 
 ### API Endpoints
 
 POST   /upload                    # Upload and index PDF documents
+
 GET    /documents                 # List all indexed documents  
+
 DELETE /documents/{filename}      # Remove document from knowledge base
+
 POST   /chat?query=...           # Ask questions and get answers
+
 POST   /search?query=...         # Vector search without LLM generation
 
 ### Use Cases
@@ -84,10 +94,10 @@ POST   /search?query=...         # Vector search without LLM generation
 
 ### Technical Highlights
 
-- **Hybrid Context Window Management**: Balances chunk size and overlap to preserve semantic meaning across boundaries
+- **Recursive Chunking**: Uses a 1500-character window to preserve semantic meaning better than fixed-size blocks.
 - **Source-Grounded Responses**: LLM is constrained to answer only from provided context, preventing hallucinations
-- **Scalable Architecture**: Stateless API design allows horizontal scaling for production deployments
-- **Memory Efficiency**: In-memory state management without browser storage dependencies
+- **Containerized Orchestration**: Seamless deployment of AI, Backend, and Frontend services using Docker.
+- **Local Data Privacy**: Entire pipeline runs locally; no data ever leaves your machine.
 
 ### Project Learnings
 
@@ -103,7 +113,6 @@ This project demonstrates expertise in:
 - Conversational memory for follow-up questions
 - Batch document processing
 - Advanced filtering (by date, document type, custom metadata)
-- Retrieval quality metrics and A/B testing framework
 
 ---
 
