@@ -9,7 +9,7 @@ image:
 img_logo: 
   src: "/post_img/flix-flow/flix-flow.webp"
   alt: "Movie Recommendation System"
-github: "git@github.com:Abdellatif404/Flix-Flow.git"
+github: "https://github.com/Abdellatif404/Flix-Flow"
 website: "#"
 technologies:
   - name: "Python"
