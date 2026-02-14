@@ -9,7 +9,7 @@ image:
 img_logo: 
   src: "/post_img/connect-four.webp"
   alt: ""
-github: "#"
+github: "https://github.com/Abdellatif404/Connect-Four-AI-Agent"
 website: "#"
 technologies:
   - name: "Python"
@@ -61,3 +61,9 @@ An intelligent Connect Four game featuring a competitive AI opponent powered by 
 - **Pygame**: Graphics rendering and game loop
 - **Custom Algorithms**: Minimax with alpha-beta pruning, heuristic evaluation
 - **Game Theory**: Zero-sum game optimization, adversarial search
+
+## Future Enhancements
+
+- **Performance Optimization**: Improve AI response time at higher search depths, particularly during mid-game positions where the branching factor is largest
+- **Bitboard Implementation**: Migrate from array-based board representation to bitboards for faster position evaluation and move generation
+- **Reinforcement Learning Integration**: Train the AI through self-play using Q-Learning or Deep Q-Networks to learn optimal strategies and improve decision-making beyond hand-crafted heuristics

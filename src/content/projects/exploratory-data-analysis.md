@@ -1,6 +1,6 @@
 ---
 title: Exploratory Data Analysis
-publishedAt: 2025-10-31
+publishedAt: 2024-08-04
 description: "An in-depth Exploratory Data Analysis (EDA) project designed to uncover patterns and relationships between students daily habits and their academic performance.
 The dataset, sourced from Kaggle, includes information on study hours, sleep patterns, diet quality, social media use, and exam results."
 slug: "exploratory-data-analysis"
@@ -11,7 +11,7 @@ img_logo:
   src: "/post_img/eda.webp"
   alt: "Exploratory Data Analysis logo"
 github: ""
-website: "https://ragent.iand.dev"
+website: "#"
 technologies:
   - name: "Pandas"
     route: "/svg/pandas.svg"
