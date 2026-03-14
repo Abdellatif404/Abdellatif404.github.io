@@ -12,24 +12,33 @@ img_logo:
 github: "https://github.com/Abdellatif404/Eigen-Field"
 website: "#"
 technologies:
+  - name: "React"
+    route: "/svg/react.svg"
   - name: "FastAPI"
     route: "/svg/fastapi.svg"
   - name: "Python"
     route: "/svg/python.svg"
-  - name: "ChromaDB"
-    route: "/svg/chromadb.svg"
   - name: "Docker"
     route: "/svg/docker.svg"
+  - name: "LangChain"
+    route: "/svg/langchain.svg"
+  - name: "ChromaDB"
+    route: "/svg/chromadb.svg"
+  - name: "Hugging Face"
+    route: "/svg/huggingface.svg"
+  - name: "Langfuse"
+    route: "/svg/langfuse.svg"
 ---
 
 ## RAG Agriculture Knowledge Assistant
 
-A smart document retrieval system that converts agricultural documents into an interactive form for building an intelligence base. The retrieval-augmented generation system is used to ask the system any question the users wish to know with the answer being referenced and accurate.
+A smart document retrieval system designed for farmers and agricultural professionals. This tool aims to help users manage and query information about their land, stored in tools like dashboards or uploaded documents (e.g., PDFs, CSVs). While the current version focuses on retrieving information from uploaded PDFs, the system is envisioned to integrate with dashboard data and CSV files in future versions. The retrieval-augmented generation system allows users to ask questions and receive accurate, referenced answers, making it easier to find critical information quickly and efficiently.
 
 ## Overview
 
-![Eigen Field Dashboard](/post_img/eigen-field/eigenfield-dashboard.webp)
-
+<video controls width="800">
+  <source src="https://github.com/user-attachments/assets/db6bcbdd-0435-4644-ae8b-35c532c09d5f" type="video/mp4">
+</video>
 
 ![Eigen Field Chat](/post_img/eigen-field/eigenfield-chat-page.webp)
 

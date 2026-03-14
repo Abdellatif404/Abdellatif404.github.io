@@ -2,7 +2,7 @@
 title: "DeepEcho: Industrial Audio Anomaly Detection (In Development)"
 publishedAt: 2026-02-10
 description: "A deep learning-based monitoring system designed to detect malfunctions in industrial machinery. It processes real-time acoustic signals using Autoencoders to identify deviations from normal operating patterns."
-slug: "deep-echo-anomaly-detection"
+slug: "anomaly-detection"
 image: 
   src: "/post_img/deep-echo/deep-echo.webp"
   alt: "Audio Anomaly Detection Interface"

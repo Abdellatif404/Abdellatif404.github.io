@@ -2,7 +2,7 @@
 title: "Hybrid Movie Recommendation Engine"
 publishedAt: 2026-01-07
 description: "A hybrid movie recommendation system that combines three distinct machine learning approaches to provide personalized movie recommendations. Trained on 1.2M+ ratings from the MovieLens dataset."
-slug: "movie-recommendation-system."
+slug: "movie-recommendation-system"
 image: 
   src: "/post_img/flix-flow/flixflow-home-page.webp"
   alt: "Movie Recommendation Interface"

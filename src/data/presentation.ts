@@ -16,7 +16,7 @@ const presentation: Presentation = {
   title: "*Hi*, I’m Abdellatif ",
   profile: "/profile.webp",
   description:
-    "**1337 (42 Network) Student** | **Software Developer** passionate about **AI** and **Machine Learning**. Exploring intelligent systems with **Python** and building projects that leverage artificial intelligence to solve real problems.",
+    "**1337 AI Engineer** passionate about **AI** and **Machine Learning**. Architecting intelligent systems with **Python** and building projects that leverage artificial intelligence to solve real-world industrial problems.",
 
   socials: [
     {
